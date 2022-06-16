@@ -169,6 +169,13 @@ h6 {
   border-radius: 30px;
   display: inline-block;
   padding: 11px 55px;
+  /* width: 200px; */
+}
+.hireme {
+  width: 200px;
+}
+.gallerysection {
+  height: 130vh !important;
 }
 .dizme_tm_buttonHire a {
   font-family: "Oxanium";
@@ -183,7 +190,12 @@ h6 {
   color: #030303;
   text-decoration: none;
 }
-
+.question {
+  margin: 33px 0px 76px;
+}
+.anchor {
+  color: #030303 !important;
+}
 #preloader {
   position: fixed;
   left: 0;
@@ -534,11 +546,27 @@ h6 {
   margin-right: -30px;
 
   box-sizing: content-box;
-  border-width: 2px;
+  /* border-width: 2px;
   border-style: solid;
   -webkit-border-radius: 50px;
   border-image: linear-gradient(to right bottom, #4bd08b, #fda804);
-  border-image-slice: 1;
+  border-image-slice: 1; */
+
+  border: double 2px transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+    linear-gradient(
+      225deg,
+      rgba(75, 42, 22, 0) 0%,
+      #fda804 36.22%,
+      #4bd08b 64.82%,
+      #fda804 67.32%,
+      #4bd08b 67.32%,
+      #4bd08b 100%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transition: 0.4s ease-in-out;
 }
 /*---------------------------------------------------*/
 /*	04) DIZME HERO
@@ -601,7 +629,7 @@ h6 {
   background-position: center;
 }
 .dizme_tm_hero .container {
-  height: 100%;
+  min-height: 100%;
 }
 .dizme_tm_hero .content {
   width: 100%;
@@ -1005,6 +1033,10 @@ h6 {
 .dizme_tm_about .right {
   width: 50%;
   padding-left: 60px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .dizme_tm_about .right .title {
   margin-bottom: 25px;
@@ -1021,9 +1053,19 @@ h6 {
   font-size: 48px;
   max-width: 90%;
   line-height: 1.25;
+  margin-top: 38px;
 }
 .dizme_tm_about .right .text {
   margin-bottom: 47px;
+  margin-top: 51px;
+}
+.dizme_tm_about .right .text p {
+  font-size: 24px;
+  width: 87%;
+  text-align: justify;
+  letter-spacing: 1px;
+  word-spacing: 0px;
+  line-height: 35px;
 }
 .dizme_tm_about .brush_1 {
   position: absolute;
@@ -1039,11 +1081,11 @@ h6 {
 /*---------------------------------------------------*/
 /*	07) DIZME PORTFOLIO
 /*---------------------------------------------------*/
-
+.mobileprotfolio {
+  display: none;
+}
 .dizme_tm_main_title {
-  width: 100%;
-  width: 680px;
-  height: auto;
+  width: 880px;
   clear: both;
   text-align: center;
   margin: 0px auto;
@@ -1063,7 +1105,7 @@ h6 {
 .dizme_tm_main_title span {
   font-size: 24px;
   font-weight: 500;
-  color: #2331f7;
+  color: #000000;
   font-family: "Jost", sans-serif;
   display: inline-block;
   margin-bottom: 6px;
@@ -1075,12 +1117,13 @@ h6 {
 }
 .dizme_tm_portfolio {
   width: 100%;
-  height: auto;
+  height: 100%;
   clear: both;
   float: left;
   padding-top: 185px;
   margin-bottom: 165px;
   position: relative;
+  /* display: none; */
 }
 .dizme_tm_portfolio .portfolio_filter {
   width: 100%;
@@ -1128,7 +1171,9 @@ h6 {
   height: auto;
   clear: both;
   float: left;
+  margin-top: 80px;
 }
+
 .dizme_tm_portfolio .portfolio_list ul {
   margin: 0px 0px 0px -25px;
   list-style-type: none;
@@ -1190,6 +1235,7 @@ h6 {
   z-index: 5;
   opacity: 0;
   visibility: hidden;
+  margin-top: 122px !important;
 }
 .dizme_tm_portfolio_titles.visible {
   opacity: 1;
@@ -3281,7 +3327,86 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
     flex-direction: column;
     align-items: center;
   }
+
+  .desktopIcon {
+    display: block;
+  }
+  .dizme_tm_main_title {
+    display: none;
+  }
 }
+
+@media (max-width: 1024px) {
+  .heroazaz,
+  .portfolio_list {
+    display: none;
+  }
+  .mobileprotfolio {
+    display: block;
+  }
+  .dizme_tm_skills .right {
+    padding-left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .dizme_tm_main_title[data-align="left"] {
+    text-align: left;
+    margin: 0px !important;
+    text-align: center;
+  }
+  .dizme_tm_copyright .right ul li:last-child {
+    margin-right: 0px;
+    text-align: center;
+  }
+  .dizme_tm_copyright .left p,
+  body.dark .dizme_tm_copyright .right ul li a,
+  body.dark .dizme_tm_copyright .right ul li a:hover {
+    font-family: "Oxanium";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 38px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .dizme_tm_partners {
+    display: none;
+  }
+  .dizme_tm_testimonials .text p {
+    font-size: 14px;
+  }
+  .dizme_tm_services .service_list .title {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-bottom: 19px;
+  }
+  .dizme_tm_services .service_list .title h3 {
+    font-size: 20px;
+  }
+  .dizme_tm_main_title h3 {
+    font-size: 25px;
+  }
+  .dizme_tm_about .right .text p {
+    font-size: 18px;
+    width: 87%;
+    text-align: justify;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    line-height: 30px;
+    margin: 0 auto;
+  }
+  .dizme_tm_copyright {
+    width: 100%;
+    height: auto;
+    clear: both;
+    float: left;
+    background-color: #f2f5fb;
+    padding: 10px 0px 1px 0px;
+  }
+}
+
 @media (max-width: 768px) {
   .dizme_tm_hero .avatar img {
     max-width: 220px;
@@ -3432,6 +3557,59 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
   .dizme_tm_contact {
     margin-bottom: 120px;
   }
+  .dizme_tm_hero .details {
+    padding-left: 0px;
+  }
+  .dizme_tm_hero .job p {
+    width: 100%;
+  }
+  .dizme_tm_down svg {
+    display: none;
+  }
+  .dizme_tm_hero .button {
+    flex-direction: column;
+  }
+  .dizme_tm_hero .job p {
+    width: 96%;
+    margin: 0 auto;
+    font-size: 25px !important;
+  }
+  .dizme_tm_hero .hello h3 {
+    font-size: 25px;
+    margin-top: 40px;
+  }
+  .dizme_tm_section {
+    height: 100%;
+  }
+  .dizme_tm_buttonHire {
+    padding: 7px 27px;
+  }
+  .hireme {
+    width: 150px;
+    text-align: center;
+  }
+  .dizme_tm_mobile_menu {
+    padding: 25px;
+  }
+  .dizme_tm_mobile_menu .button .social ul {
+    list-style: none;
+  }
+  .dizme_tm_mobile_menu .button .social ul li {
+  }
+  .dizme_tm_mobile_menu .button .social ul li a {
+    margin: 0px 3px;
+
+    padding: 5px;
+  }
+  .dizme_tm_mobile_menu .button .social ul li a i {
+    color: #fff;
+  }
+  .desktopIcon {
+    display: none;
+  }
+  .dizme_tm_section {
+    height: 600px;
+  }
 }
 
 .svgbtn {
@@ -3440,4 +3618,39 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
 }
 .azaz {
   transform: scale(1.5) !important;
+}
+
+/* Dihan abir */
+@media (max-width: 576px) {
+  .dizme_tm_section {
+    height: 700px;
+  }
+}
+
+@media (max-width: 320px) {
+  .dizme_tm_about .right .text p {
+    font-size: 20px;
+    width: 100%;
+    line-height: 32px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 500;
+    color: white;
+  }
+  .dizme_tm_about .right .title h3 {
+    font-size: 22px;
+    max-width: 100%;
+  }
+  .dizme_tm_about .right .text {
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+  .dizme_tm_hero .job p {
+    width: 96%;
+    margin: 0 auto;
+    font-size: 19px !important;
+  }
+  .mobileprotfolioSectionazaz {
+    height: 400px !important;
+  }
 }
