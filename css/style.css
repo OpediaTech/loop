@@ -173,6 +173,10 @@ h6 {
 }
 .hireme {
   width: 200px;
+  text-align: center;
+}
+.testimnial-section {
+  display: block;
 }
 .gallerysection {
   height: 130vh !important;
@@ -2383,7 +2387,11 @@ h6 {
 /*---------------------------------------------------*/
 /*	13) DIZME SUBSCRIBE
 /*---------------------------------------------------*/
-
+.hiremedihan {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
 .dizme_tm_subscribe {
   width: 100%;
   height: auto;
@@ -3072,9 +3080,18 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
     margin-bottom: 25px;
   }
 }
+.mobilenav {
+  display: none;
+}
 @media (max-width: 1040px) {
   .container {
     padding: 0px 20px;
+  }
+  .mobilenav {
+    display: block;
+  }
+  #contact {
+    /* display: none; */
   }
   .mouse-cursor {
     display: none;
@@ -3163,7 +3180,7 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
     margin-bottom: 40px;
   }
   .dizme_tm_about .left .image img {
-    max-width: 300px;
+    max-width: 100%;
     max-height: 300px;
   }
   .dizme_tm_about .right {
@@ -3335,8 +3352,23 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
     display: none;
   }
 }
-
+.menu .hireme {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .menu .hireme {
+    display: none !important;
+  }
+}
+#copyright_section_dihan {
+  height: 200px !important;
+}
 @media (max-width: 1024px) {
+  .hiremedihan {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .heroazaz,
   .portfolio_list {
     display: none;
@@ -3344,11 +3376,30 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
   .mobileprotfolio {
     display: block;
   }
+  /* nav fot mobile */
+  .dizme_tm_mobile_menu {
+    padding: 25px;
+  }
+  .dizme_tm_mobile_menu .button .social ul {
+    list-style: none;
+  }
+  .dizme_tm_mobile_menu .button .social ul li {
+  }
+  .dizme_tm_mobile_menu .button .social ul li a {
+    margin: 0px 3px;
+
+    padding: 5px;
+  }
+  .dizme_tm_mobile_menu .button .social ul li a i {
+    color: #fff;
+  }
+
+  /* nav */
+  .testimnial-section {
+    display: none;
+  }
   .dizme_tm_skills .right {
-    padding-left: 0px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    display: none;
   }
   .dizme_tm_main_title[data-align="left"] {
     text-align: left;
@@ -3406,8 +3457,66 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
     padding: 10px 0px 1px 0px;
   }
 }
+.mobileprotfolio .your-class .mobileprotfolioSectionazaz img {
+  height: 200px;
+  width: 95% !important;
+  margin: 0px 10px;
+  object-fit: cover;
+}
+.mobileprotfolio .your-class .mobileprotfolioSectionazaz {
+  /* background-color: red; */
+}
+@media (min-width: 769px) {
+  #contact {
+    display: none;
+  }
+}
 
+.mobileprotfolio .your-class .mobileprotfolioSectionazaz img {
+  height: 200px;
+  margin: 0px 10px;
+  object-fit: cover;
+}
+
+.wrapperimg {
+  padding: 5px;
+}
+.wrapperimg img {
+  border-radius: 10px;
+}
+.slick-list {
+  padding-top: 150px !important;
+  padding-bottom: 50px !important;
+  transition: 0.3s ease-in-out;
+}
+.slick-slide {
+  opacity: 0.6;
+}
+.slick-current {
+  transition: 0.5s ease-in-out;
+  transform: scaleY(1.3) !important;
+  margin-top: 5px;
+  opacity: 1;
+}
+
+@media (min-width: 320px) and (max-width: 511px) {
+  #contact {
+    height: 10px;
+    margin-top: 50px;
+  }
+}
+@media (min-width: 700px) and (max-width: 768px) {
+  #copyright_section_dihan {
+    height: 200px !important;
+    margin-top: 200px;
+    margin-bottom: -100px;
+  }
+}
 @media (max-width: 768px) {
+  .slick-current {
+    transform: scaleY(1.01);
+    margin-top: 5px;
+  }
   .dizme_tm_hero .avatar img {
     max-width: 220px;
     max-height: 220px;
@@ -3520,8 +3629,8 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
     padding-top: 50px;
   }
   .dizme_tm_portfolio {
-    padding-top: 113px;
-    margin-bottom: 88px;
+    padding-top: 13px;
+    margin-bottom: 8px;
   }
   .dizme_tm_portfolio .portfolio_filter {
     padding-top: 53px;
@@ -3625,6 +3734,9 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
   .dizme_tm_section {
     height: 700px;
   }
+  .your-class.slick-initialized.slick-slider {
+    height: 400px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -3651,6 +3763,6 @@ body.dark .dizme_tm_copyright .right ul li a:hover {
     font-size: 19px !important;
   }
   .mobileprotfolioSectionazaz {
-    height: 400px !important;
+    height: 200px !important;
   }
 }
